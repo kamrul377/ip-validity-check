@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TableIp from '../components/TableIp'
 
 const IPAddressInput = () => {
     const [ipAddress, setIPAddress] = useState('');
@@ -39,7 +40,7 @@ const IPAddressInput = () => {
         <>
             <div className='bg-white p-8 rounded h-fit'>
                 <h1 className='text-indigo-950 font-bold text-center text-4xl'>IP :)</h1>
-                <input className='w-72 rounded text-base px-4 py-2 mt-4 outline-none border '
+                <input className='w-96 rounded text-xl px-4 py-3 mt-4 outline-none border '
                     type="text"
                     placeholder='ipv4: '
                     value={ipAddress}
@@ -49,7 +50,7 @@ const IPAddressInput = () => {
                 {/* {!isValidIP && <p style={{ color: 'red' }}>Invalid IP address</p>} */}
                 <div>
                     {
-                        !isValidIP && ipAddress.length>0 && <p className={`text-red-500 text-sm text-right`}>Invalid IP address</p>
+                        !isValidIP && ipAddress.length > 0 && <p className={`text-red-500 text-sm text-right`}>Invalid IP address</p>
                     }
                 </div>
 
@@ -58,8 +59,15 @@ const IPAddressInput = () => {
                 </div>
 
 
-                <div className='bg-green-500'>
-                    hello 
+                <div className='bg-white py-3 relative'>
+                    <input className='bg-blue- w-2/6 ml-auto rounded p-1 absolute top-2 right-0 border text-slate-700 focus:outline-none' placeholder='00' type="number" name="" id="" />
+
+                    <div className='mt-10 duration-300'>
+                        <button className='bg-gradient-to-tr from-cyan-500 to-pink-500 hover:from-cyan-700 hover:to-blue-400 duration-300 px-4 py-2 rounded text-white text-sm'>Generate Host</button>
+                    </div>
+
+                    <TableIp />
+
                 </div>
 
 
